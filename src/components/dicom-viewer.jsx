@@ -11,7 +11,7 @@ import cornerstoneWADOImageLoader from 'cornerstone-wado-image-loader';
 import dicomParser from 'dicom-parser';
 import cornerstoneWebImageLoader from 'cornerstone-web-image-loader';
 import { LiquidGlassButton } from './ui/liquid-glass-button';
-import { IconUpload } from '@tabler/icons-react';
+import { IconExclamationCircle, IconUpload } from '@tabler/icons-react';
 import { toast } from 'sonner';
 
 // Configure Cornerstone Tools
@@ -212,10 +212,13 @@ const DicomViewer = forwardRef(({ onImageLoaded, setshowReportInput }, ref) => {
           accept=".dcm,.jpg,.png,.jpeg"
         />
         {!isImageLoaded && (
-          <div className="flex flex-col items-center justify-center h-full">
-            <p className="text-neutral-500 text-center p-4 pointer-events-none">
-              Drop DICOM file here or use the upload button
-            </p>
+          <div className="flex flex-col items-center justify-center h-full space-y-8">
+            <div className="text-neutral-500 text-center p-4 pointer-events-none px-6 flex flex-col items-center">
+              <span>Drop DICOM file here or use the upload button</span>
+              <span className='pt-4 pb-2'><IconExclamationCircle/></span>
+              <small className='text-center'>Note! This software is strictly is intended for educational and illustrative purposes only. <br/>It is not a certified medical device and has not undergone the rigorous clinical validation required for diagnostic or patient-care purposes.</small>
+            </div>
+
             <LiquidGlassButton
                       onClick={()=>triggerUpload()}
                       className="upload-image"

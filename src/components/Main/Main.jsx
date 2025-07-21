@@ -298,68 +298,65 @@ export default function Main({setOpen, setContent}) {
                   <CardDescription>
                     <div className="modal-body overflow-auto p-4" style={{ maxHeight: '50vh' }}>
                       
-    <p className="mb-4 text-sm text-gray-300">
-        Welcome to the Multimodal Medical Retrieval System! This tool allows you to find similar clinical cases based on an image and its corresponding diagnostic report.
-    </p>
+                          <p className="mb-4 text-sm text-gray-300">
+                              This tool allows you to find similar clinical cases based on an image and its corresponding diagnostic report.
+                          </p>
 
-    <ol className="list-decimal list-inside space-y-4 text-sm">
-        <li>
-            <strong className="text-white">Upload Your Image</strong>
-            <p className="pl-4 text-gray-400">
-                Click the <span className="font-semibold text-cyan-400">Upload an Image</span> button located at the bottom-left of the screen. You can upload a medical image in one of the following formats:
-            </p>
-            <ul className="list-disc list-inside pl-8 text-gray-400 mt-2">
-                <li>DICOM (.dcm)</li>
-                <li>JPEG (.jpg, .jpeg)</li>
-                <li>PNG (.png)</li>
-            </ul>
-            <p className="pl-4 text-gray-400 mt-1">
-                Once loaded, your image will be displayed in the main viewer.
-            </p>
-        </li>
+                          <ol className="list-decimal list-inside space-y-4 text-sm">
+                              <li>
+                                  <strong className="text-white">Upload Your Image</strong>
+                                  <p className="pl-4 text-gray-400">
+                                      Click the <span className="font-semibold text-cyan-400">Upload an Image</span> button located at the bottom-left of the screen. You can upload a medical image in one of the following formats:
+                                  </p>
+                                  <ul className="list-disc list-inside pl-8 text-gray-400 mt-2">
+                                      <li>DICOM (.dcm)</li>
+                                      <li>JPEG (.jpg, .jpeg)</li>
+                                      <li>PNG (.png)</li>
+                                  </ul>
+                                  <p className="pl-4 text-gray-400 mt-1">
+                                      Once loaded, your image will be displayed in the main viewer.
+                                  </p>
+                              </li>
 
-        <li>
-            <strong className="text-white">Enter the Medical Report</strong>
-            <p className="pl-4 text-gray-400">
-                After uploading an image, the text input fields for the medical report will appear on the left. Please copy and paste the relevant sections of your report into the two boxes:
-            </p>
-            <ul className="list-disc list-inside pl-8 text-gray-400 mt-2">
-                <li><strong>Findings:</strong> The detailed observations from the radiologist.</li>
-                <li><strong>Impression:</strong> The final summary or conclusion of the report.</li>
-            </ul>
-        </li>
+                              <li>
+                                  <strong className="text-white">Enter the Medical Report</strong>
+                                  <p className="pl-4 text-gray-400">
+                                      After uploading an image, the text input fields for the medical report will appear on the left. Please copy and paste the relevant sections of your report into the two boxes:
+                                  </p>
+                                  <ul className="list-disc list-inside pl-8 text-gray-400 mt-2">
+                                      <li><strong>Findings:</strong> The detailed observations from the radiologist.</li>
+                                      <li><strong>Impression:</strong> The final summary or conclusion of the report.</li>
+                                  </ul>
+                              </li>
 
-        <li>
-            <strong className="text-white">Initiate the Search</strong>
-            <p className="pl-4 text-gray-400">
-                Once the image is loaded and both report fields are filled, click the <span className="font-semibold text-cyan-400">Search Similar Study</span> button. A loader will appear, indicating that the system is processing your query and searching the database.
-            </p>
-        </li>
-        
-        <li>
-            <strong className="text-white">Review the Results</strong>
-            <p className="pl-4 text-gray-400">
-                After the search is complete, a results modal will appear. You will see the top 5 most similar cases. For each case, you will find:
-            </p>
-            <ul className="list-disc list-inside pl-8 text-gray-400 mt-2">
-                <li>The original, technical report and its image.</li>
-                <li>A simplified, easy-to-understand version of the report.</li>
-                <li>Detailed readability scores and a similarity metric to show how the text was improved.</li>
-            </ul>
-        </li>
-    </ol>
+                              <li>
+                                  <strong className="text-white">Initiate the Search</strong>
+                                  <p className="pl-4 text-gray-400">
+                                      Once the image is loaded and both report fields are filled, click the <span className="font-semibold text-cyan-400">Search Similar Study</span> button. A loader will appear, indicating that the system is processing your query and searching the database.
+                                  </p>
+                              </li>
+                              
+                              <li>
+                                  <strong className="text-white">Review the Results</strong>
+                                  <p className="pl-4 text-gray-400">
+                                      After the search is complete, a results modal will appear. You will see the top 5 most similar cases. For each case, you will find:
+                                  </p>
+                                  <ul className="list-disc list-inside pl-8 text-gray-400 mt-2">
+                                      <li>The original, technical report and its image.</li>
+                                      <li>A simplified, easy-to-understand version of the report.</li>
+                                      <li>Detailed readability scores and a similarity metric to show how the text was improved.</li>
+                                  </ul>
+                              </li>
+                          </ol>
 
-    <div className="mt-6 p-3 bg-neutral-900 rounded-lg">
-        <p className="text-xs text-cyan-400 font-semibold">PRO TIP:</p>
-        <p className="text-xs text-gray-400">You can use the tools in the toolbar at the top of the screen (Pan, Zoom, etc.) to interact with the images in the main viewer.</p>
-    </div>
-</div>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="modal-body overflow-auto p-4" style={{ maxHeight: '50vh' }}>
-                     
-                  </div>
+                          <div className="mt-6 p-3 bg-neutral-900 rounded-lg">
+                              <p className="text-xs text-cyan-400 font-semibold">PRO TIP:</p>
+                              <p className="text-xs text-gray-400">You can use the tools in the toolbar at the top of the screen (Pan, Zoom, etc.) to interact with the images in the main viewer.</p>
+                          </div>
+                      </div>
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
                    <div className="modal-footer border-t border-gray-700 p-2 flex justify-end">
                     <LiquidGlassButton variant="smart" onClick={() => setIsHelpModalOpen(false)}>
                       Got it
