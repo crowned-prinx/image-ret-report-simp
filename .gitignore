@@ -1,0 +1,7 @@
+.DS_Store
+.prettierignore
+.prettierrc
+.vscode/
+.env
+node_modules/
+.env.development
