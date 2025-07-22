@@ -27,8 +27,7 @@ export function SuccessModal({ children, title, description }) {
         <DialogContent className="sm:max-w-[1024px] min-w-[200px] !bg-neutral-800 mx-5 h-[95vh] text-white/50 border border-white">
             <DialogTitle>{title}</DialogTitle>
             <DialogHeader>
-            <DialogTitle>{title}</DialogTitle>
-            <DialogDescription>{description}</DialogDescription>
+              <DialogDescription>{description}</DialogDescription>
             </DialogHeader>
             {children}
         </DialogContent>

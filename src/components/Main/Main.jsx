@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import logo from "/assets/images/logo192.png"
+import logo from "/assets/images/image.0017.png"
 import NavBar from "../NavBar/NavBar";
-import { IconBook, IconHelp, IconPlus, IconSearch, IconUpload, IconUser } from "@tabler/icons-react";
+import { IconBook, IconExclamationCircle, IconHelp, IconPlus, IconSearch, IconUpload, IconUser } from "@tabler/icons-react";
 import { LiquidGlassButton } from "../ui/liquid-glass-button";
 import DicomViewer from "../dicom-viewer";
 
@@ -198,7 +198,7 @@ export default function Main({setOpen, setContent}) {
                         <Textarea
                           id="impression"
                           type="text"
-                          className={`${findingsBorderOutline}`}
+                          className={`${impressionBorderOutline}`}
                           placeholder="Bilateral lower lobe bronchiectasis with improved right lower..."
                           value={impression}
                           ref={impressionOutlineRef}
@@ -353,6 +353,16 @@ export default function Main({setOpen, setContent}) {
                               <p className="text-xs text-cyan-400 font-semibold">PRO TIP:</p>
                               <p className="text-xs text-gray-400">You can use the tools in the toolbar at the top of the screen (Pan, Zoom, etc.) to interact with the images in the main viewer.</p>
                           </div>
+
+                          <div className="mt-6 p-3 bg-neutral-900 rounded-lg">
+                              <div className="text-gray-400 text-center p-4 pointer-events-none px-6 flex flex-col items-center">
+                              <span className='pt-4 pb-2 text-amber-400'><IconExclamationCircle/></span>
+                              <small className='text-center'>Note! This software is strictly is intended for educational and illustrative purposes only. <br/>It is not a certified medical device and has not undergone the rigorous clinical validation required for diagnostic or patient-care purposes.</small>
+                            </div>
+                          </div>
+
+
+                         
                       </div>
                         </CardDescription>
                       </CardHeader>
