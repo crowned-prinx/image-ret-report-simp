@@ -24,20 +24,20 @@ export function SuccessModal({ children, title, description }) {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   if (isDesktop) {
     return (
-        <DialogContent className="sm:max-w-[1024px] min-w-[200px] !bg-neutral-800 mx-5 h-[95vh] text-white/50 border border-white">
-            <DialogTitle>{title}</DialogTitle>
+        <>
             <DialogHeader>
-              <DialogDescription>{description}</DialogDescription>
+                <DialogTitle>{title || "Title"}</DialogTitle>
+              <DialogDescription>{description || "Description"}</DialogDescription>
             </DialogHeader>
             {children}
-        </DialogContent>
+        </>
     );
   }
   return (
-    <DrawerContent className="!bg-neutral-800 text-white/50">
+    <>
       <DrawerHeader className="text-left">
-        <DrawerTitle>{title}</DrawerTitle>
-        <DrawerDescription>{description}</DrawerDescription>
+        <DrawerTitle>{title || "Title"}</DrawerTitle>
+        <DrawerDescription>{description || "Description"}</DrawerDescription>
       </DrawerHeader>
       {children}
       <DrawerFooter className="pt-4">
@@ -45,6 +45,6 @@ export function SuccessModal({ children, title, description }) {
           <Button variant="outline">Cancel</Button>
         </DrawerClose>
       </DrawerFooter>
-    </DrawerContent>
+    </>
   );
 }

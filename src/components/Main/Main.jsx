@@ -96,12 +96,11 @@ export default function Main({setOpen, setContent}) {
       }
 
       const result = await response.json();
-      console.log('API Success:', result);
-      toast.success('Successfully submitted and processed the report!');
+      toast.success('Studies found for your query!');
       setFindings("");
       setImpression("");
       setSearchResult(result);
-      setContent(<SuccessModal children={<ResultContent content={result} />} title={`Search Results (${result?.results?.length})`} description="We found some similar studies, you can review them below."/>);
+      setContent(<SuccessModal children={<ResultContent content={result} />} title={`Search Results (${result?.results?.length})`} description={result?.results?.length >= 1 ? `We found some similar studies, you can review them below.` : `Sorry, we couldn't find similar studies to your query. Please try another query.`}/>);
       setOpen(true);
     } catch (error) {
       console.error("Error submitting data:", error);

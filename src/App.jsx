@@ -14,9 +14,11 @@ export default function App() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       {isDesktop ? (
-          <DialogContent>{content}</DialogContent>
+          <DialogContent className="sm:max-w-[1024px] min-w-[200px] !bg-neutral-800 h-[95vh] text-white/50">
+            {content}
+          </DialogContent>
         ) : (
-          <DrawerContent>{content}</DrawerContent>
+          <DrawerContent className="!bg-neutral-800 text-white/50">{content}</DrawerContent>
         )}
     <div className="h-full overflow-hidden">
       <div className="w-full">

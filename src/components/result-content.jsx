@@ -13,8 +13,9 @@ const ResultContent = ({content}) => {
 
 
     return ( 
-    <div className="flex flex-col items-center w-full h-full overflow-x-scroll px-2">
-        {data?.results?.map((info) => (
+    <div className="flex flex-col items-center w-full overflow-x-scroll px-2">
+        {data?.results?.length ?
+        data?.results?.map((info) => (
             <div className="py-5" key={info?.rank}>
                 <div className="w-full grid grid-cols-2 gap-4 text-white opacity-60">
                     <div className="flex-1/2">
@@ -70,7 +71,7 @@ const ResultContent = ({content}) => {
                             </div>
                         </div>
 
-                        <div className="flex py-6">
+                        <div className="flex my-6 border-t border-t-neutral-400">
                              <p className="pr-1 w-full font-bold">Similarity score:</p>
                             <span className="text-sm font-bold">{roundUp(info?.cosine_similarity, 2)}</span>
                         </div>
@@ -90,7 +91,12 @@ const ResultContent = ({content}) => {
                 </div>
                 <div className="bg-white/20 h-1 rounded-full my-6"></div>
             </div>
-        ))}
+        ))
+         : (
+            <div>
+                <p>Sorry, we couldn't find similar studies to your query. Please try another query.</p>
+            </div>
+        )}
     </div> );
 }
  
