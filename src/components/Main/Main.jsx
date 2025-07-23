@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import logo from "/assets/images/image.0017.png"
 import NavBar from "../NavBar/NavBar";
 import { IconBook, IconExclamationCircle, IconHelp, IconPlus, IconSearch, IconUpload, IconUser } from "@tabler/icons-react";
@@ -37,7 +37,10 @@ export default function Main({setOpen, setContent}) {
   const [loadedFile, setLoadedFile] = useState(null);
   const [searchResult, setSearchResult] = useState(null);
 
-  
+  useEffect(()=>{
+    setImpression("");
+    setFindings("");
+  },[loadedFile])
 
   const handleUploadClick = () => {
     // Call the triggerUpload method exposed by the CornerstoneViewer component
@@ -97,10 +100,9 @@ export default function Main({setOpen, setContent}) {
 
       const result = await response.json();
       toast.success('Studies found for your query!');
-      setFindings("");
-      setImpression("");
+      console.log(result)
       setSearchResult(result);
-      setContent(<SuccessModal children={<ResultContent content={result} />} title={`Search Results (${result?.results?.length})`} description={result?.results?.length >= 1 ? `We found some similar studies, you can review them below.` : `Sorry, we couldn't find similar studies to your query. Please try another query.`}/>);
+      setContent(<SuccessModal children={<ResultContent content={result} />} title={`Search Results (${result?.results?.length - 1})`} description={result?.results?.length >= 1 ? `We found some similar studies, you can review them below.` : `Sorry, we couldn't find similar studies to your query. Please try another query.`}/>);
       setOpen(true);
     } catch (error) {
       console.error("Error submitting data:", error);

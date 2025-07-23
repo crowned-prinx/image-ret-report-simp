@@ -16,6 +16,41 @@ const ResultContent = ({content}) => {
     <div className="flex flex-col items-center w-full overflow-x-scroll px-2">
         {data?.results?.length ?
         data?.results?.map((info) => (
+            info?.rank === 0 ? 
+            
+            <div className="py-5" key={info?.rank}>
+                <div className="w-full grid grid-cols-2 gap-4 text-white opacity-60">
+                    <div className="flex-1/2">
+                    <img
+                        src={`data:image/png;base64,${info?.image_base64}`}
+                        className="rounded-sm object-cover bg-black w-full"
+                        alt={`Search Result Image ${info?.rank}`}
+                        />
+                    </div>
+                    <div className="">
+                        <div className="w-full p-1">
+                            <h3 className="font-extrabold text-lg border-b-neutral-400 border-b">Your Query Image Info</h3>
+                        </div>
+                        <div className="grid grid-cols-1 flex-wrap ">
+                           <div className="w-full flex flex-col py-6 space-y-6">
+                                <div className="flex flex-col space-y-2">
+                                    <div className="flex space-x-2">
+                                        <p className="font-bold">Label: </p>
+                                        <span>{info?.label}</span>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <p className="font-bold">Original report: </p>
+                                        <span>{info?.original_text}</span>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div className="bg-amber-600/60 h-1 rounded-full my-6"></div>
+            </div>
+            : 
             <div className="py-5" key={info?.rank}>
                 <div className="w-full grid grid-cols-2 gap-4 text-white opacity-60">
                     <div className="flex-1/2">
@@ -79,6 +114,10 @@ const ResultContent = ({content}) => {
                 </div>
 
                 <div className="w-full flex flex-col py-6 space-y-6">
+                     <div className="flex space-x-2">
+                        <p className="font-bold">Label: </p>
+                    <span>{info?.label}</span>
+                    </div>
                     <div className="flex flex-col space-y-2">
                         <p className="font-bold">Simplified report: </p>
                     <span>{info?.simplified_text}</span>

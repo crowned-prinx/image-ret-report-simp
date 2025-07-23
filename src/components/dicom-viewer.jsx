@@ -216,7 +216,7 @@ const DicomViewer = forwardRef(({ onImageLoaded, setshowReportInput }, ref) => {
             <div className="text-neutral-500 text-center p-4 pointer-events-none px-6 flex flex-col items-center">
               <span>Drop DICOM file here or use the upload button</span>
               <span className='pt-4 pb-2 text-amber-400'><IconExclamationCircle/></span>
-              <small className='text-center'>Note! This software is strictly is intended for educational and illustrative purposes only. <br/>It is not a certified medical device and has not undergone the rigorous clinical validation required for diagnostic or patient-care purposes.</small>
+              <small className='text-center'>Note! This software is strictly is intended for educational and illustrative purposes only. <br/>It is not a certified medical device and has not undergone the rigorous clinical validation required for<br/>diagnostic or patient-care purposes.</small>
             </div>
 
             <LiquidGlassButton
